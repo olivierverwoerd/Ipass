@@ -1,0 +1,120 @@
+\hypertarget{classmorse}{}\section{morse Class Reference}
+\label{classmorse}\index{morse@{morse}}
+
+
+{\ttfamily \#include $<$morse.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmorse_a8a972ad05a82519e2dfeb9c189c3a5c1}{morse} (hwlib\+::pin\+\_\+in \&digital\+In, int wpm=15, bool last\+Was\+Space=true, bool last\+Was\+Slash=false)
+\begin{DoxyCompactList}\small\item\em Initializes the morse pin and set default configuration. \end{DoxyCompactList}\item 
+char \hyperlink{classmorse_a9d0fad692247122d0ec3c17af1244924}{listen\+For\+Morse} ()
+\begin{DoxyCompactList}\small\item\em Will listen for morse code and output . , \+\_\+ , / as output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmorse_a39663cf1eabc1a6d1cb6d40487c95bd9}\label{classmorse_a39663cf1eabc1a6d1cb6d40487c95bd9}} 
+char \hyperlink{classmorse_a39663cf1eabc1a6d1cb6d40487c95bd9}{listen\+For\+Morse\+Char} ()
+\begin{DoxyCompactList}\small\item\em This wil use the \hyperlink{classmorse_a9d0fad692247122d0ec3c17af1244924}{listen\+For\+Morse()}; to get it\textquotesingle{}s characters and output the character corresponding to the morse code this is what you will most likely use for morse. The charactes are translated woth the morse\+Dictionary();. \end{DoxyCompactList}\item 
+int \hyperlink{classmorse_ad4da7cb937ff264bb0b27d7cb13b5207}{calibrate\+Wpm} ()
+\begin{DoxyCompactList}\small\item\em If you have no idea what the wpm is use this tool it will not only tell you what the wpm is it will also warn you that the units are not the way they are meant to be like in my case. You may have to change the values in listen\+For\+Morse. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmorse_a8bc8252cbf54933b5e1d6d0c5242e195}\label{classmorse_a8bc8252cbf54933b5e1d6d0c5242e195}} 
+void \hyperlink{classmorse_a8bc8252cbf54933b5e1d6d0c5242e195}{calibrate\+Volume} ()
+\begin{DoxyCompactList}\small\item\em If you callibrate wpm and the answer is N\+OT what you are sending. The microphone is not getting it\textquotesingle{}s desired volume. Use this tool to get your morse working. Just send a bunch of eeeeeeeee\textquotesingle{}s at 20 wpm and get the output as close to 0. than try \hyperlink{classmorse_ad4da7cb937ff264bb0b27d7cb13b5207}{calibrate\+Wpm()} again. \end{DoxyCompactList}\item 
+const char \hyperlink{classmorse_a697d50fc8f58b68626cd5e80297cfde6}{morse\+To\+Char} (char $\ast$morse\+Array)
+\begin{DoxyCompactList}\small\item\em morse\+Dictionary hwlib stings somehow didn\textquotesingle{}t work correctly I used char arrays to solve this problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Olivier 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20/06/2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmorse_a8a972ad05a82519e2dfeb9c189c3a5c1}\label{classmorse_a8a972ad05a82519e2dfeb9c189c3a5c1}} 
+\index{morse@{morse}!morse@{morse}}
+\index{morse@{morse}!morse@{morse}}
+\subsubsection{\texorpdfstring{morse()}{morse()}}
+{\footnotesize\ttfamily morse\+::morse (\begin{DoxyParamCaption}\item[{hwlib\+::pin\+\_\+in \&}]{digital\+In,  }\item[{int}]{wpm = {\ttfamily 15},  }\item[{bool}]{last\+Was\+Space = {\ttfamily true},  }\item[{bool}]{last\+Was\+Slash = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Initializes the morse pin and set default configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digital\+In} & The digital pin you wish to receive morse with \\
+\hline
+{\em wpm} & Words per Minute using P\+A\+R\+IS as the standard word. slow = 10 normal = 15 fast = 20 this can be detected using \hyperlink{classmorse_ad4da7cb937ff264bb0b27d7cb13b5207}{calibrate\+Wpm()} \\
+\hline
+{\em last\+Was\+Space} & space is in this case the morse space (the indication of seperation between letters of the same word) Used to let listen for morse wait for input instead of continuing\\
+\hline
+\end{DoxyParams}
+default = true so the script waits for intput. 
+\begin{DoxyParams}{Parameters}
+{\em last\+Was\+Slash} & Used to let the output for space exist out of \char`\"{} / \char`\"{} with seperate char output because strings don\textquotesingle{}t work\\
+\hline
+\end{DoxyParams}
+default = false because last was space is already true. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmorse_ad4da7cb937ff264bb0b27d7cb13b5207}\label{classmorse_ad4da7cb937ff264bb0b27d7cb13b5207}} 
+\index{morse@{morse}!calibrate\+Wpm@{calibrate\+Wpm}}
+\index{calibrate\+Wpm@{calibrate\+Wpm}!morse@{morse}}
+\subsubsection{\texorpdfstring{calibrate\+Wpm()}{calibrateWpm()}}
+{\footnotesize\ttfamily int morse\+::calibrate\+Wpm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If you have no idea what the wpm is use this tool it will not only tell you what the wpm is it will also warn you that the units are not the way they are meant to be like in my case. You may have to change the values in listen\+For\+Morse. 
+
+timers for the \mbox{\Hypertarget{classmorse_a9d0fad692247122d0ec3c17af1244924}\label{classmorse_a9d0fad692247122d0ec3c17af1244924}} 
+\index{morse@{morse}!listen\+For\+Morse@{listen\+For\+Morse}}
+\index{listen\+For\+Morse@{listen\+For\+Morse}!morse@{morse}}
+\subsubsection{\texorpdfstring{listen\+For\+Morse()}{listenForMorse()}}
+{\footnotesize\ttfamily char morse\+::listen\+For\+Morse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Will listen for morse code and output . , \+\_\+ , / as output. 
+
+If you change the device the clock is different and the constant devided by wpm has to be canged.
+
+the unit is given a min and a max that has a 20\% tollerance. This is stable at different wpm.
+
+If the unit differs form the normal. like in my case change the
+
+Change unitspace and unitslash if the calibrate wpm notice these are wrong (Change only the number afther the $\ast$ )
+
+This is N\+OT a bug it\textquotesingle{}s called Farnsworth Speed and it differs. This is normal
+
+The program waits for signal if the last char was a space to prevent doubble spaces
+
+the program i used for morse \href{https://morsecode.scphillips.com/translator.html}{\tt https\+://morsecode.\+scphillips.\+com/translator.\+html} uses a 5 unit space instead of the normal 3 unit.
+
+If theres nothing at the end this will enter a space (\char`\"{} / \char`\"{}) \mbox{\Hypertarget{classmorse_a697d50fc8f58b68626cd5e80297cfde6}\label{classmorse_a697d50fc8f58b68626cd5e80297cfde6}} 
+\index{morse@{morse}!morse\+To\+Char@{morse\+To\+Char}}
+\index{morse\+To\+Char@{morse\+To\+Char}!morse@{morse}}
+\subsubsection{\texorpdfstring{morse\+To\+Char()}{morseToChar()}}
+{\footnotesize\ttfamily const char morse\+::morse\+To\+Char (\begin{DoxyParamCaption}\item[{char $\ast$}]{morse\+Array }\end{DoxyParamCaption})}
+
+
+
+morse\+Dictionary hwlib stings somehow didn\textquotesingle{}t work correctly I used char arrays to solve this problem. 
+
+dit . $\ast$ dah -\/ / \textbackslash{} E T / \textbackslash{} / \textbackslash{} I A N M / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} S U R W D K G O / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} H V F $\ast$ L $\ast$ P J B X C Y Z Q $\ast$ $\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em ma} & ma is short voor Morse Array. The array should have a size of 7 (6 characters is morse max and a \textbackslash{}0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+it will return the char corresponding to the code 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{morse_8hpp}{morse.\+hpp}\item 
+morse.\+cpp\end{DoxyCompactItemize}

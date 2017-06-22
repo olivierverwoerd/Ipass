@@ -1,0 +1,94 @@
+\hypertarget{classsound_analyzer}{}\section{sound\+Analyzer Class Reference}
+\label{classsound_analyzer}\index{sound\+Analyzer@{sound\+Analyzer}}
+
+
+{\ttfamily \#include $<$sound\+Analyzer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsound_analyzer_a6d78c426f393464095811648e6a1a923}{sound\+Analyzer} (hwlib\+::target\+::pin\+\_\+adc \&analog\+In, int sample\+\_\+buffer\+\_\+size=100)
+\begin{DoxyCompactList}\small\item\em Init. \end{DoxyCompactList}\item 
+const int \hyperlink{classsound_analyzer_af0a99b0fa68b2c1462240d0543a79a81}{volume} (int method=0)
+\begin{DoxyCompactList}\small\item\em Returns the volume as interger This is just a number to view differance between quiet and loud sounds It\textquotesingle{}s not linked to decibel. \end{DoxyCompactList}\item 
+const int \hyperlink{classsound_analyzer_aed5b8c463c0b7a386c619e36aa758427}{frequency} ()
+\begin{DoxyCompactList}\small\item\em frequency Will detect freqentcy based on the time between the top and the bottom of the sin. \end{DoxyCompactList}\item 
+void \hyperlink{classsound_analyzer_aaedabb7cf70ed32356f04baae1c9e765}{debug} ()
+\begin{DoxyCompactList}\small\item\em Small tool to view the analog input The output has a \$ and ; for the plotter \href{https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/}{\tt https\+://developer.\+mbed.\+org/users/borislav/notebook/serial-\/port-\/plotter/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Olivier 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20/06/2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsound_analyzer_a6d78c426f393464095811648e6a1a923}\label{classsound_analyzer_a6d78c426f393464095811648e6a1a923}} 
+\index{sound\+Analyzer@{sound\+Analyzer}!sound\+Analyzer@{sound\+Analyzer}}
+\index{sound\+Analyzer@{sound\+Analyzer}!sound\+Analyzer@{sound\+Analyzer}}
+\subsubsection{\texorpdfstring{sound\+Analyzer()}{soundAnalyzer()}}
+{\footnotesize\ttfamily sound\+Analyzer\+::sound\+Analyzer (\begin{DoxyParamCaption}\item[{hwlib\+::target\+::pin\+\_\+adc \&}]{analog\+In,  }\item[{int}]{sample\+\_\+buffer\+\_\+size = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Init. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em analog\+In} & \\
+\hline
+{\em sample\+\_\+buffer\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsound_analyzer_aaedabb7cf70ed32356f04baae1c9e765}\label{classsound_analyzer_aaedabb7cf70ed32356f04baae1c9e765}} 
+\index{sound\+Analyzer@{sound\+Analyzer}!debug@{debug}}
+\index{debug@{debug}!sound\+Analyzer@{sound\+Analyzer}}
+\subsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void sound\+Analyzer\+::debug (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Small tool to view the analog input The output has a \$ and ; for the plotter \href{https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/}{\tt https\+://developer.\+mbed.\+org/users/borislav/notebook/serial-\/port-\/plotter/}. 
+
+this debug tool helps to view what the beginning and the end is when plotting by beginning with a zero \mbox{\Hypertarget{classsound_analyzer_aed5b8c463c0b7a386c619e36aa758427}\label{classsound_analyzer_aed5b8c463c0b7a386c619e36aa758427}} 
+\index{sound\+Analyzer@{sound\+Analyzer}!frequency@{frequency}}
+\index{frequency@{frequency}!sound\+Analyzer@{sound\+Analyzer}}
+\subsubsection{\texorpdfstring{frequency()}{frequency()}}
+{\footnotesize\ttfamily const int sound\+Analyzer\+::frequency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+frequency Will detect freqentcy based on the time between the top and the bottom of the sin. 
+
+Use a bigger sample buffer size to improve accuracy and with max A\+DC of 4095 sample\+\_\+buffer\+\_\+size has to be less than 5244164
+
+tops and bottoms of each wave \mbox{\Hypertarget{classsound_analyzer_af0a99b0fa68b2c1462240d0543a79a81}\label{classsound_analyzer_af0a99b0fa68b2c1462240d0543a79a81}} 
+\index{sound\+Analyzer@{sound\+Analyzer}!volume@{volume}}
+\index{volume@{volume}!sound\+Analyzer@{sound\+Analyzer}}
+\subsubsection{\texorpdfstring{volume()}{volume()}}
+{\footnotesize\ttfamily const int sound\+Analyzer\+::volume (\begin{DoxyParamCaption}\item[{int}]{method = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Returns the volume as interger This is just a number to view differance between quiet and loud sounds It\textquotesingle{}s not linked to decibel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & Method 0 = Average volume (default) Method 1 = Peak volume (faster but less accurate) \\
+\hline
+\end{DoxyParams}
+A\+DC Max value
+
+with max A\+DC of 4095 sample\+\_\+buffer\+\_\+size has to be less than 5244164 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sound_analyzer_8hpp}{sound\+Analyzer.\+hpp}\item 
+sound\+Analyzer.\+cpp\end{DoxyCompactItemize}

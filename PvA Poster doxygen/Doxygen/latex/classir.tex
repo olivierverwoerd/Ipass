@@ -1,0 +1,69 @@
+\hypertarget{classir}{}\section{ir Class Reference}
+\label{classir}\index{ir@{ir}}
+
+
+{\ttfamily \#include $<$ir.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classir_a991bbdc6f99f2346cde9eb4c502e4eab}{ir} (hwlib\+::pin\+\_\+in \&digital\+In)
+\begin{DoxyCompactList}\small\item\em Initializes the pin. \end{DoxyCompactList}\item 
+const int \hyperlink{classir_a89c6de406934c73ed5e4a4c122799bc3}{receive} (int protocol=0)
+\begin{DoxyCompactList}\small\item\em receive Waits to receive an IR command and returns this as a int value This supports Sony and N\+EC protocol. I didn\textquotesingle{}t have more remotes to work with. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classir_a127ebf88b9a98271afdeffb93302cfc1}\label{classir_a127ebf88b9a98271afdeffb93302cfc1}} 
+const void \hyperlink{classir_a127ebf88b9a98271afdeffb93302cfc1}{debug} ()
+\begin{DoxyCompactList}\small\item\em Small tool to view what IR receives. The output has a \$ and ; for the plotter \href{https://developer.mbed.org/users/borislav/notebook/serial-port-plotter/}{\tt https\+://developer.\+mbed.\+org/users/borislav/notebook/serial-\/port-\/plotter/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Olivier 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20/06/2017 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classir_a991bbdc6f99f2346cde9eb4c502e4eab}\label{classir_a991bbdc6f99f2346cde9eb4c502e4eab}} 
+\index{ir@{ir}!ir@{ir}}
+\index{ir@{ir}!ir@{ir}}
+\subsubsection{\texorpdfstring{ir()}{ir()}}
+{\footnotesize\ttfamily ir\+::ir (\begin{DoxyParamCaption}\item[{hwlib\+::pin\+\_\+in \&}]{digital\+In }\end{DoxyParamCaption})}
+
+
+
+Initializes the pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digital\+In} & The pin that you wish to receive IR. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classir_a89c6de406934c73ed5e4a4c122799bc3}\label{classir_a89c6de406934c73ed5e4a4c122799bc3}} 
+\index{ir@{ir}!receive@{receive}}
+\index{receive@{receive}!ir@{ir}}
+\subsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily const int ir\+::receive (\begin{DoxyParamCaption}\item[{int}]{protocol = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+receive Waits to receive an IR command and returns this as a int value This supports Sony and N\+EC protocol. I didn\textquotesingle{}t have more remotes to work with. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em protocol} & 0 = auto detect Sony and N\+EC 1 = N\+EC explained here\+: \href{http://www.sbprojects.com/knowledge/ir/nec.php}{\tt http\+://www.\+sbprojects.\+com/knowledge/ir/nec.\+php} 2 = S\+O\+NY explained here\+: \href{http://www.sbprojects.com/knowledge/ir/sirc.php}{\tt http\+://www.\+sbprojects.\+com/knowledge/ir/sirc.\+php} \\
+\hline
+\end{DoxyParams}
+calculates the checksum from the N\+EC protocol. If incorrect ir will return 0
+
+Will get rid of the inverse in the checksum and output 16 bit 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ir_8hpp}{ir.\+hpp}\item 
+ir.\+cpp\end{DoxyCompactItemize}
